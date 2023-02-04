@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col h-screen w-screen bg-gray-800">
+
+    <img src="./images/top-image.svg" class="w-full" alt="">
+
+
+    <div class="flex flex-row justify-end ml-[5rem]">
+        <div class="flex w-full flex-col self-start mr-[5rem] ml-[3.5rem]">
+            <div class=" ml-[4rem] w-full">
+                <h1 class="self-center ml-[0.5rem] text-2xl font-bold text-indigo-500 mb-[1rem] mt-[1rem]">READY TO LAUNCH IN...</h1>
+            </div>
+            <div class="self-center flex flex-row ml-[3rem]">
+                <p class="font-thin text-xs text-gray-500 ml-[1rem]">Dias</p>
+                <p class="font-thin text-xs text-gray-500 ml-[3rem]">Horas</p>
+                <p class="font-thin text-xs text-gray-500 ml-[3rem]">Minutos</p>
+                <p class="font-thin text-xs text-gray-500 ml-[2rem]">Segundos</p>
+            </div>
+    
+            <p id="demo" class=" w-full ml-[7.8rem] self-center text-5xl font-thin text-indigo-500"></p>
+            <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Feb 5, 2023 15:37:25").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+            // Get today's date and time
+            var now = new Date().getTime();
+                
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+                
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = ('0'+days).slice(-2) + "    :    " + ('0'+hours).slice(-2) + "    :    "
+            + ('0'+minutes).slice(-2) + "    :    " + ('0'+seconds).slice(-2) + "";
+                
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+            }, 1000);
+            </script>
+
+            <div class="flex flex-row justify-center align-center w-full">
+                <p class="text-[0.7rem] ml-[3rem] mt-[2rem] self-center text-gray-500 font-thin">Inscreva-se para saber mais sobre o lançamento</p>
+            </div>
+            <button class="botao rounded-[10px] w-1/3 bg-indigo-500 ml-[8.3rem] mt-[1rem]">Inscreva-se</button>
+        </div>
+        <img src="./images/rocket.svg" class="w-5/12  mt-[0.7rem]" alt="">
+    </div>
+    
+    <div class="form absolute ml-[17.5rem] invisible mt-[5rem] w-1/3 h-3/5 bg-gray-900 rounded-[20px]  drop-shadow-2xl">
+        <h2 class="font-bold text-xl mt-[1rem] ml-[2rem] text-gray-600">Preencha o formulário</h2>
+        <div class="flex flex-col ml-[2rem] text-gray-300">
+            <p class="font-bold">Nome</p>
+            <input type="text" class="text-black bg-gray-400 rounded-[5px] w-2/3 h-[1.2rem] text-sm ">
+
+            <p class="font-bold mt-[0.8rem]">Número</p>
+            <input type="text" class="text-black bg-gray-400 rounded-[5px] w-2/3 h-[1.2rem] text-sm ">
+
+            <p class="font-bold mt-[0.8rem]">CPF</p>
+            <input type="text" class="text-black bg-gray-400 rounded-[5px] w-2/3 h-[1.2rem] text-sm ">
+
+            <button class="inscrito mr-[2rem] mt-[0.6rem] bg-indigo-500 rounded-xl">Confirmar inscrição</button>
+        </div>
+    </div> 
+
+    <div class="thanks flex flex-col justify-center invisible bg-gray-900 text-indigo-600 w-3/6 h-3/5 mt-[5rem] ml-[12rem] absolute rounded-xl">
+        <p class="text-2xl self-center font-bold">OBRIGADO POR SE INSCREVER!!</p>
+        <p class="text-sm self-center font-thin">Pressione qualquer tecla para sair</p>
+    </div>
+
+    <img src="./images/bottom-image.svg" class="w-full" alt="">
+
+    
+</body>
+    <script src="./script.js"></script>
+</html>
